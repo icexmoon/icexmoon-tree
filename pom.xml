@@ -4,7 +4,7 @@
 
     <groupId>cn.icexmoon</groupId>
     <artifactId>icexmoon-tree</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <!-- 项目描述 -->
     <description>一个轻量级的 Java 工具库，提供树形结构操作功能。</description>

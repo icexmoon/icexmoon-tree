@@ -158,20 +158,23 @@ public class Tree<V> {
 
 
     /**
-     * 返回指定节点的所有父节点(包含自己)
+     * 返回指定节点的所有父节点(不包含自己)
      *
      * @param node 指定节点
      * @return 父节点集合
      */
     public List<Node<V>> getAllParents(@NonNull Node<V> node) {
+        List<Node<V>> result = new ArrayList<>();
+        if (node.getParent() == null){
+            return result;
+        }
+        Node<V> currentNode = node.getParent();
         Stack<Node<V>> stack = new Stack<>();
-        Node<V> currentNode = node;
         do {
             stack.push(currentNode);
             currentNode = currentNode.getParent();
         }
         while (currentNode != null);
-        List<Node<V>> result = new ArrayList<>();
         while (!stack.isEmpty()) {
             result.add(stack.pop());
         }
@@ -214,5 +217,16 @@ public class Tree<V> {
             }
         }
         return null;
+    }
+
+    /**
+     * 获取指定节点的所有子节点
+     * @param node 指定节点
+     * @return 所有子节点
+     */
+    public List<Node<V>> getAllChildren(@NonNull Node<V> node){
+        List<Node<V>> allChildren = new ArrayList<>();
+        traversalWithDeepFirst(allChildren::add, node, false);
+        return allChildren;
     }
 }

@@ -171,7 +171,11 @@ System.out.println(jsonString);
 
 ## 其它操作
 
-其它相关的操作和 API 可以直接查看源码。
+其它相关的操作和 API 可以直接查看源码：
+
+## 完整示例
+
+[这里](https://github.com/icexmoon/learn-cursor/blob/main/ch1/oa-service/src/main/java/cn/icexmoon/oaservice/util/DeptTree.java)有一个使用本项目实现部门树的完整示例。
 
 # 反馈&&建议
 
@@ -186,6 +190,10 @@ System.out.println(jsonString);
 ## 1.0.1
 
 简化 POM 文件，移除不必要的依赖传递。修改 Readme 文件描述内容。
+
+## 1.0.2
+
+增加获取所有子节点的 API。
 
 The End.
 
