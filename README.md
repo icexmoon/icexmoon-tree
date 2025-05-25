@@ -115,13 +115,13 @@ System.out.println(findNode.getValue());
 
 做前后端分离开发的时候，前端获取到的树不希望是类似：
 
-```
+```json
 {
 	value: {
 		id: 1,
 		name: "宇宙科技有限公司",
 		parentId: 0,
-		...
+		//...
 	},
 	children[
 		{
@@ -129,7 +129,7 @@ System.out.println(findNode.getValue());
 				id: 2,
 				name: "人事部",
 				parentId: 1,
-				...
+				//...
 			},
 			children:[...]
 		}
@@ -139,18 +139,18 @@ System.out.println(findNode.getValue());
 
 当然，直接使用是没有任何问题的，但如果前端一定要使用类似下面的“简单树”（不包含 Value 这一层）结构：
 
-```
+```json
 {
     id: 1,
     name: "宇宙科技有限公司",
     parentId: 0,
-    ...
+    //...
 	children[
 		{
             id: 2,
             name: "人事部",
             parentId: 1,
-            ...
+            //...
 			children:[...]
 		}
 	]
@@ -176,6 +176,16 @@ System.out.println(jsonString);
 # 反馈&&建议
 
 项目地址为 [icexmoon/icexmoon-tree](https://github.com/icexmoon/icexmoon-tree)，你可以从这里查看源码或提交建议。
+
+# 版本更新记录
+
+## 1.0.0
+
+初始版本。
+
+## 1.0.1
+
+简化 POM 文件，移除不必要的依赖传递。修改 Readme 文件描述内容。
 
 The End.
 
