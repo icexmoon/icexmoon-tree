@@ -167,6 +167,7 @@ System.out.println(jsonString);
 
 > - 因为涉及对象拷贝，所以需要提供一个 Class 对象用于反射。
 > - 第三个参数可以控制返回的简单树中是否关联父节点（parent字段），一般来说需要 JSON 后返回给前端的话必须是`false`，否则会导致 JSON 格式化工具循环遍历进而堆栈溢出。
+> - 要操作的数据类型必须有 parent 和 children 属性以及对应的 Getter/Setter 方法，这里引入一个 [Nodeable 接口](https://github.com/icexmoon/icexmoon-tree/blob/main/src/main/java/cn/icexmoon/tree/inter/Nodeable.java)进行限制，也就是说只有实现了该接口才能使用上面的 API。
 
 ## 其它操作
 
