@@ -39,4 +39,9 @@ public class TreeTests {
         Node<Department> findNode = tree.findNode(node -> node.getChildren() != null && node.getValue().getId() == 5);
         System.out.println(findNode.getValue());
     }
+
+    @Test
+    public void testDestroy(){
+        tree.destroy();
+    }
 }

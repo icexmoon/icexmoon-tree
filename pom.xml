@@ -49,6 +49,7 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.12.2</version>
             <scope>test</scope>
+            <optional>true</optional>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
@@ -56,12 +57,14 @@
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
             <version>5.8.38</version>
+            <optional>true</optional>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
         <dependency>
@@ -69,149 +72,7 @@
             <artifactId>fastjson2</artifactId>
             <version>2.0.57</version>
             <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.sonatype.central/central-publishing-maven-plugin -->
-        <dependency>
-            <groupId>org.sonatype.central</groupId>
-            <artifactId>central-publishing-maven-plugin</artifactId>
-            <version>0.7.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.14.0</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>qdox</artifactId>
-                    <groupId>com.thoughtworks.qdox</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-utils</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-io</artifactId>
-                    <groupId>commons-io</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.3.1</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>plexus-archiver</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-utils</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${java-doc.version}</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>qdox</artifactId>
-                    <groupId>com.thoughtworks.qdox</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-collections</artifactId>
-                    <groupId>commons-collections</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-lang3</artifactId>
-                    <groupId>org.apache.commons</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-text</artifactId>
-                    <groupId>org.apache.commons</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>httpclient</artifactId>
-                    <groupId>org.apache.httpcomponents</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>httpcore</artifactId>
-                    <groupId>org.apache.httpcomponents</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>maven-artifact</artifactId>
-                    <groupId>org.apache.maven</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>maven-shared-utils</artifactId>
-                    <groupId>org.apache.maven.shared</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-archiver</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-classworlds</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-component-annotations</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-container-default</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-interpolation</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-java</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-utils</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-xml</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-io</artifactId>
-                    <groupId>commons-io</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.7</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>plexus-utils</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>plexus-xml</artifactId>
-                    <groupId>org.codehaus.plexus</groupId>
-                </exclusion>
-            </exclusions>
+            <optional>true</optional>
         </dependency>
     </dependencies>
     <build>
