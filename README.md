@@ -86,6 +86,8 @@ tree.destroy();
 
 ## 遍历树
 
+### 匿名函数
+
 遍历树是一个常见操作，本项目支持通过一个匿名函数 Consumer 在遍历树时对节点执行一些操作：
 
 ```java
@@ -99,6 +101,60 @@ tree.traversal(node -> {
 
 > - `getAllParents`方法会返回指定节点的所有父节点，具体可以参考源码。
 > - 默认采用深度优先遍历，提供其他 API 可以指定广度遍历或深度遍历。
+
+### 迭代器
+
+除了使用匿名函数遍历，还提供多个迭代器进行遍历：
+
+- `BreadthFirstChildrenIterator`，对当前节点和子节点进行遍历，广度优先
+- `DepthFirstChildrenIterator`，对当前节点和子节点进行遍历，深度优先
+- `ChildFirstParentsIterator`，对当前节点和父节点进行遍历，从子节点到根节点
+- `ParentFirstParentsIterator`，对当前节点和父节点进行遍历，从父节点到子节点
+
+调用示例：
+
+```java
+@Test
+public void testDepthFirstIterator() {
+    Tree<Department> tree = TestData.tree;
+    DepthFirstChildrenIterator<Department> iterator = new DepthFirstChildrenIterator<>(tree.getRoot());
+    traversal(iterator);
+}
+
+private static void traversal(Iterator<Node<Department>> iterator) {
+    while (iterator.hasNext()){
+        Node<Department> node = iterator.next();
+        System.out.println(node.getValue());
+    }
+}
+```
+
+如果不需要遍历起始节点自身，只需要遍历其子节点（父节点），有构造器参数可以修改这一行为：
+
+```java
+new DepthFirstChildrenIterator<>(tree.getRoot(), false);
+```
+
+### foreach
+
+节点类`Node`实现了`Iterable`接口，默认返回一个深度优先遍历的迭代器，因此可以使用`foreach`语句遍历其子节点：
+
+```java
+for (Node<Department> departmentNode : tree.getRoot()) {
+    System.out.println(departmentNode.getValue());
+}
+```
+
+如果需要使用深度优先的迭代器，可以：
+
+```java
+tree.getRoot().setTraversalType(TraversalType.BREADTH_FIRST);
+for (Node<Department> departmentNode : tree.getRoot()) {
+    System.out.println(departmentNode.getValue());
+}
+```
+
+如果需要遍历父节点或者遍历子节点时跳过起始节点，请使用迭代器。
 
 ## 查找节点
 
@@ -194,6 +250,10 @@ System.out.println(jsonString);
 ## 1.0.2
 
 增加获取所有子节点的 API。
+
+## 1.0.3
+
+增加节点迭代器，可以更方便的对节点进行遍历操作。
 
 The End.
 

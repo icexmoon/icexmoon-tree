@@ -67,13 +67,6 @@ public class Tree<V> {
         }
     }
 
-    public enum TraversalType {
-        // 深度优先
-        DEEP_FIRST,
-        // 广度优先
-        BREADTH_FIRST,
-    }
-
     private final TreeGenerator<V> treeGenerator;
     private Node<V> root;
 

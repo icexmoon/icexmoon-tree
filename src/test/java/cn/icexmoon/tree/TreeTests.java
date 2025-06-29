@@ -44,4 +44,19 @@ public class TreeTests {
     public void testDestroy(){
         tree.destroy();
     }
+
+    @Test
+    public void testIterator(){
+        for (Node<Department> departmentNode : tree.getRoot()) {
+            System.out.println(departmentNode.getValue());
+        }
+    }
+
+    @Test
+    public void testIterator2(){
+        tree.getRoot().setTraversalType(TraversalType.BREADTH_FIRST);
+        for (Node<Department> departmentNode : tree.getRoot()) {
+            System.out.println(departmentNode.getValue());
+        }
+    }
 }
